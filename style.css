@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@200;400;700&family=Fira+Sans&family=Montserrat&family=Roboto+Mono:wght@700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: ghostwhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 4rem;
+}
+
+.header h1 {
+    cursor: pointer;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-list li {
+    list-style: none;
+    align-items: center;
+}
+
+.navbar-list li a,
+.navbar-list a:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.navbar-list a:hover {
+    color: slategray;
+}
+
+.icons {
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.nav-icons {
+    width: 2rem;
+    height: 2rem;
+    /* display: none; */
+}
+
+#close {
+    display: none;
+}
+
+/* media queries */
+
+@media (max-width:920px) {
+    .icons {
+        display: block;
+        z-index: 999;
+    }
+
+    .header {
+        position: relative;
+        padding: 0 40px;
+    }
+
+    .header .nav-bar {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: darkgray;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .m-header .nav-bar {
+        transform: translateX(0%);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .m-header .nav-icons {
+        display: none;
+    }
+
+    .m-header #close {
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 40px;
+    }
+
+}
+
+@media (max-width:430px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .m-header #close {
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 20px;
+    }
+}
